@@ -1,11 +1,12 @@
 import { Alert, Platform } from "react-native";
 import { Camera } from "expo-camera";
+import { useState, useRef } from "react";
+import { View } from "react-native";
+import { CameraType } from "expo-camera";
 
 import * as FileSystem from "expo-file-system";
 
-
 import * as ImagePicker from "expo-image-picker";
-
 
 export let selectedImageUri = "";
 
@@ -24,10 +25,8 @@ export const openCamera = async () => {
         return;
     }
 
-    Alert.alert(
-        "Camera Access Granted",
-        "You can now implement the camera functionality."
-    );
+    const cameraRef = useRef<typeof Camera>(null);
+    const [type, setType] = useState(ImagePicker.CameraType.back);
 };
 
 export const pickImage = async () => {
