@@ -1,11 +1,8 @@
-import { Alert, Platform } from "react-native";
+import React, { useState, useEffect, useRef } from "react";
+import { View, Button, Image, Alert, Platform, StyleSheet } from "react-native";
 import { Camera } from "expo-camera";
-import { useState, useRef } from "react";
-import { View } from "react-native";
-import { CameraType } from "expo-camera";
-
+import * as MediaLibrary from "expo-media-library";
 import * as FileSystem from "expo-file-system";
-
 import * as ImagePicker from "expo-image-picker";
 
 export let selectedImageUri = "";
