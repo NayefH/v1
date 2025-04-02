@@ -62,6 +62,19 @@ export default function HomeScreen() {
           Willkommen in der {platformName}-Version der App!
         </ThemedText>
       </ThemedView>
+
+      <ThemedView style={styles.inputContainer}>
+        <TextInput
+          style={styles.textInput}
+          placeholder="Type something here..."
+          value={text}
+          onChangeText={setText}
+        />
+        <TouchableOpacity style={styles.saveButton} onPress={saveText}>
+          <ThemedText style={styles.saveButtonText}>Save Text</ThemedText>
+        </TouchableOpacity>
+      </ThemedView>
+
       <View style={styles.gridContainer}>
         <TouchableOpacity style={styles.gridItem} onPress={openCamera}>
           <Ionicons name="camera" size={32} color="#1D3D47" />
@@ -84,17 +97,7 @@ export default function HomeScreen() {
           <ThemedText style={styles.gridItemText}>Download File</ThemedText>
         </TouchableOpacity>
       </View>
-      <ThemedView style={styles.inputContainer}>
-        <TextInput
-          style={styles.textInput}
-          placeholder="Type something here..."
-          value={text}
-          onChangeText={setText}
-        />
-        <TouchableOpacity style={styles.saveButton} onPress={saveText}>
-          <ThemedText style={styles.saveButtonText}>Save Text</ThemedText>
-        </TouchableOpacity>
-      </ThemedView>
+
       <ThemedView style={styles.titleContainer}>
         <ThemedText type="title">Welcome!</ThemedText>
         <HelloWave />
@@ -143,6 +146,7 @@ const styles = StyleSheet.create({
   inputContainer: {
     padding: 16,
     marginTop: 16,
+    paddingHorizontal: 8,
     backgroundColor: "#A1CEDC",
     borderRadius: 8,
   },
